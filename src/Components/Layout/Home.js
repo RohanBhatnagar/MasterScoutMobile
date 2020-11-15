@@ -17,7 +17,7 @@ let matches;
 let data;
 
 export class Home extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
   }
 
@@ -56,28 +56,12 @@ export class Home extends Component {
   };
 
 
-  //db testing 
-  setTeamDB = async () => {
-    const res = await axios.post('https://jsonbox.io/box_27ac3dacb977a1e82148/data', { teamData: [4, 5, 6] });
-  }
-
-  logState = () => {
-    console.log(this.props.data);
-  }
-  
-
-  
-
   render() {
     tba = this.props.thebluealliance;
     matches = this.props.matches;
     data = this.props.dataReducer;
     return (
       <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
-        <Button onClick={() => {
-          this.setTeamDB()
-          this.logState()
-        }}>test db</Button>
         <Container>
           <Row className="border-bottom">
             <Col>
