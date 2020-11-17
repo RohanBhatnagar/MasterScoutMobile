@@ -71,7 +71,6 @@ export class Home extends Component {
           <Row style={spacer}></Row>
           <Row>
             <MatchNum matchNum={matches.currentMatch} />
-            <h1>git test</h1>
           </Row>
           <Row>
             {tba.schedule.length > 10 && (

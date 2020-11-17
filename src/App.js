@@ -27,7 +27,7 @@ export class App extends Component {
 
   //set highest state to data and pass down through props
   getTeams = async () => {
-    const response = await axios.get('https://jsonbox.io/box_27ac3dacb977a1e82148/data')
+    const response = await axios.get('https://jsonbox.io/box_5a9767899ab8ef9ab5d0/data/5fb0b24b9c0ec50017038679')
     this.setState({
       data: response
     })

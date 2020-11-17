@@ -33,9 +33,9 @@ export class DataPreviewRaw extends Component {
           <Card.Title>
             {this.props.data.teamNum}
 
-            <Button style={buttonStyle} size="small" onClick={this.toggleEdit}>
+            {/* <Button style={buttonStyle} size="small" onClick={this.toggleEdit}>
               {this.state.editable ? "Save" : "Edit"}
-            </Button>
+            </Button> */}
           </Card.Title>
 
           <Card.Subtitle className="mb-2 text-muted">

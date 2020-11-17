@@ -58,7 +58,7 @@ const positioning = {
   zIndex: "100",
 };
 const searchWidth = {
-  width: "70vw",
+  width: "65vw",
   padding: ".65%",
 };
 const brandWidth = {
