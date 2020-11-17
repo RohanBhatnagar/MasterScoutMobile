@@ -139,21 +139,18 @@ export class ImportRaw extends Component {
             <div style={spacer}></div>
           </Row>
           <Row>
-            <InputBar style={formWidth} />
+            <InputBar style={formWidth}/>
           </Row>
           {this.props.importer.data.map((data) => {
             return <DataPreview data={data} editable={false}></DataPreview>;
           })}
           <Row>
-            <Button style={importStyle} onClick={this.importHandle}>
+            <Button disabled style={importStyle} onClick={this.importHandle}>
               Import
             </Button>
           </Row>
           <Row>
             <div style={spacer}></div>
-          </Row>
-          <Row>
-            {/* <Button onclick={this.download("this.json", this.props.dataReducer.teams)}>Save Data</Button> */}
           </Row>
         </Container>
       </div>

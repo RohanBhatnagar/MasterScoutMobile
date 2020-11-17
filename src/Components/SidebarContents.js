@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown'
 import { ViewMatchesConn } from "./Layout/ViewMatches";
 import { ManageData } from "./Layout/ManageData";
 import { HomeCom } from "./Layout/Home";
@@ -9,18 +11,8 @@ import { Compare } from "./Layout/Compare.js";
 import { Export } from "./Layout/Export.js";
 import { Rankings } from "./Layout/Rankings.js";
 import { Picklist } from './Layout/Picklist';
-import Button from 'react-bootstrap/Button';
 
 export class SidebarContents extends Component {
-  //for testing purposes - get rid of in non-dev situation
-  logProps = () => {
-    let x = 0;
-    if (x < 1) {
-      console.log(this.props);
-    }
-    x++;
-  }
-
   render() {
     return (
       <Col sm={10}>

@@ -5,28 +5,22 @@ export class Sidebar extends Component {
   render() {
     return (
       <Col style={rightBorder}>
-        <div>
+        <div >
           <Nav variant="pills" className="flex-column" >
             <Nav.Item>
               <Nav.Link eventKey="1">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="2">Manage Data</Nav.Link>
+              <Nav.Link eventKey="2">Data</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="3">View Matches</Nav.Link>
+              <Nav.Link eventKey="3">Matches</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="4" >Compare</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="5">Export</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
               <Nav.Link eventKey="6"> Rankings </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="7"> Picklist </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="8">Settings</Nav.Link>
@@ -49,4 +43,8 @@ const rightBorder = {
   width: "15.5%",
   textAlign: "left",
 };
+
+const width = {
+  width: "140%",
+}
 export default Sidebar;

@@ -114,7 +114,7 @@ export class RawDataTableRaw extends Component {
                       ))}
                     </tbody>
                   </Table>
-                  <Button onClick={this.showModal}>Edit</Button>
+                  {/* <Button onClick={this.showModal}>Edit</Button> */}
                 </div>
               </Accordion.Collapse>
             </Card>
