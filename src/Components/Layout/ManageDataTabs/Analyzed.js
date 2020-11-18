@@ -18,7 +18,7 @@ export class AnalyzedRaw extends Component {
             <h2>Analyzed</h2>
           </Row>
           <Row>
-            <Button style={manualbaby} onClick={this.runAggregate}>Manual Update</Button>
+            <Button onClick={this.runAggregate}>Manual Update</Button>
           </Row>
           <Row>
             <AnalyzedTable teams={this.props.dataReducer.teams} />
