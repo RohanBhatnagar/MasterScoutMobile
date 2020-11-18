@@ -10,11 +10,18 @@ import { Navigation } from "./Components/Navigation";
 import { Sidebar } from "./Components/Sidebar";
 import { SidebarContents } from "./Components/SidebarContents";
 import axios from 'axios';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ManageData from "./Components/Layout/ManageData";
+import { HomeCom } from './Components/Layout/Home.js';
+import { Picklist } from "./Components/Layout/Picklist";
+import { Rankings } from "./Components/Layout/Rankings";
+import { Settings } from "./Components/Layout/Settings";
+
 
 let counter = 1;
 
 export class App extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       data: []
@@ -37,7 +44,7 @@ export class App extends Component {
 
   //initial setstate FIX LATER THIS IS VERY JANK
   pullDataState = () => {
-    if(counter === 1){
+    if (counter === 1) {
       this.getTeams();
       console.log("this worked")
     }
@@ -45,7 +52,7 @@ export class App extends Component {
   }
 
   render() {
-    {this.pullDataState()}
+    { this.pullDataState() }
     if (this.state.activePage == 0) {
       // this is temp lol
       return (
@@ -80,16 +87,16 @@ export class App extends Component {
       return (
         <Provider store={store}>
           <div>
-            <Navigation />
-            <Tab.Container
-              defaultActiveKey="1"
-              className="justify-content-between"
-            >
-              <Row>
-                <Sidebar />
-                <SidebarContents data={this.state.data}/>
-              </Row>
-            </Tab.Container>
+            <Router>
+              <Navigation />
+              <Switch>
+                <Route path="/" exact component={HomeCom}></Route>
+                <Route path="/data" component={ManageData}></Route>
+                <Route path="/picklist" component={Picklist}></Route>
+                <Route path="/rankings" component={Rankings}></Route>
+                <Route path="/settings" component={Settings}></Route>
+              </Switch>
+            </Router>
           </div>
         </Provider>
       );

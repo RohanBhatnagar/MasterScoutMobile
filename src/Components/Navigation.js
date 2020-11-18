@@ -7,8 +7,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { searchTeam } from "../Actions/searchTeam";
-import { Input } from "reactstrap";
+import { Dropdown, SplitButton } from 'react-bootstrap';
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 export class NavigationRaw extends Component {
   searchHandle = (e) => {
@@ -27,7 +28,33 @@ export class NavigationRaw extends Component {
         <Container fluid style={positioning}>
           <Row>
             <Col>
-              <Navbar.Brand style={brandWidth}>NEMƎSIS</Navbar.Brand>
+              <SplitButton drop="right" variant="secondary">
+                <Dropdown.Item>
+                  <Link to="/">
+                    HOME
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link to="/picklist">
+                    PICKLIST
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link to="/rankings">
+                    RANKINGS
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link to="/settings">
+                    SETTINGS
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link to="/data">
+                    DATA
+                  </Link>
+                </Dropdown.Item>
+              </SplitButton>
             </Col>
             <Col sm={13}>
               <Form inline onSubmit={this.searchHandle}>
@@ -41,7 +68,7 @@ export class NavigationRaw extends Component {
                   style={searchWidth}
                 />
                 <Button variant="outline-light" style={btnWidth}>
-                  Search
+                  Go
                 </Button>
               </Form>
             </Col>
