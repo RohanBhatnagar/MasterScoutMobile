@@ -1,14 +1,9 @@
 import React, { Component } from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Tab from "react-bootstrap/Tab";
-import Container from "react-bootstrap/Container";
 import { Provider } from "react-redux";
 import store from "./store";
 import { Navigation } from "./Components/Navigation";
-import { Sidebar } from "./Components/Sidebar";
-import { SidebarContents } from "./Components/SidebarContents";
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ManageData from "./Components/Layout/ManageData";
@@ -16,6 +11,8 @@ import { HomeCom } from './Components/Layout/Home.js';
 import { Picklist } from "./Components/Layout/Picklist";
 import { Rankings } from "./Components/Layout/Rankings";
 import { Settings } from "./Components/Layout/Settings";
+import Matches from "./Components/Matches";
+import { Compare } from "./Components/Layout/Compare";
 
 
 let counter = 1;
@@ -32,8 +29,7 @@ export class App extends Component {
     activePage: 0,
   };
 
-  //set highest state to data and pass down through props
-  getTeams = async () => {
+  getData = async () => {
     const response = await axios.get('https://jsonbox.io/box_5a9767899ab8ef9ab5d0/data/5fb0b24b9c0ec50017038679')
     this.setState({
       data: response
@@ -41,11 +37,9 @@ export class App extends Component {
     console.log(this.state.data)
   }
 
-
-  //initial setstate FIX LATER THIS IS VERY JANK
   pullDataState = () => {
-    if (counter === 1) {
-      this.getTeams();
+    if(counter === 1){
+      this.getData();
       console.log("this worked")
     }
     counter++;
@@ -95,6 +89,8 @@ export class App extends Component {
                 <Route path="/picklist" component={Picklist}></Route>
                 <Route path="/rankings" component={Rankings}></Route>
                 <Route path="/settings" component={Settings}></Route>
+                <Route path="/matches" component={Matches}></Route>
+                <Route path="/compare" component={Compare}></Route>
               </Switch>
             </Router>
           </div>
@@ -108,10 +104,6 @@ export class App extends Component {
     });
   };
 }
-const fixedPos = {
-  position: "fixed",
-  textAlign: "center",
-};
 const bigSpacer = {
   padding: "8%",
 };

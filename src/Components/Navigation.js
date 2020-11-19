@@ -7,9 +7,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { searchTeam } from "../Actions/searchTeam";
-import { Dropdown, SplitButton } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import DoneIcon from '@material-ui/icons/Done';
 
 export class NavigationRaw extends Component {
   searchHandle = (e) => {
@@ -28,33 +30,43 @@ export class NavigationRaw extends Component {
         <Container fluid style={positioning}>
           <Row>
             <Col>
-              <SplitButton drop="right" variant="secondary">
+              <DropdownButton drop="right" variant="secondary" id="Dropdown">
                 <Dropdown.Item>
                   <Link to="/">
-                    HOME
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link to="/picklist">
-                    PICKLIST
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link to="/rankings">
-                    RANKINGS
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link to="/settings">
-                    SETTINGS
+                    Home
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
                   <Link to="/data">
-                    DATA
+                    Data
                   </Link>
                 </Dropdown.Item>
-              </SplitButton>
+                <Dropdown.Item>
+                  <Link to="/matches">
+                    Matches
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link to="/compare">
+                    Compare
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link to="/rankings">
+                    Rankings
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link to="/picklist">
+                    Picklist
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link to="/settings">
+                    Settings
+                  </Link>
+                </Dropdown.Item>
+              </DropdownButton>
             </Col>
             <Col sm={13}>
               <Form inline onSubmit={this.searchHandle}>
@@ -67,10 +79,12 @@ export class NavigationRaw extends Component {
                   placeholder="Search"
                   style={searchWidth}
                 />
-                <Button variant="outline-light" style={btnWidth}>
-                  Go
-                </Button>
               </Form>
+            </Col>
+            <Col>
+              <Button variant="outline-light" style={btnWidth}>
+                <DoneIcon/>
+              </Button>
             </Col>
           </Row>
         </Container>
@@ -86,13 +100,12 @@ const positioning = {
 };
 const searchWidth = {
   width: "65vw",
-  padding: ".65%",
-};
-const brandWidth = {
-  width: "13.5vw",
+  marginTop: "0.5vh",
 };
 const btnWidth = {
   width: "10vw",
+  textJustify: "center",
+  border: 'none', 
 };
 const mapStateToProps = (state) => {
   return {

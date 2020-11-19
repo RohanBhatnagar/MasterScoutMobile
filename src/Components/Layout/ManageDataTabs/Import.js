@@ -8,8 +8,6 @@ import { connect } from "react-redux";
 import { InputBar } from "./InputBar";
 import { clearData } from "../../../Actions/ImportActions/clearData";
 import { appendMatchData } from "../../../Actions/DataActions/appendMatchData";
-import { DupDataPopup } from '../../../Components/DupDataPopup';
-import { zeroRightClassName } from "react-remove-scroll-bar";
 
 export class ImportRaw extends Component {
   componentWillMount() {
