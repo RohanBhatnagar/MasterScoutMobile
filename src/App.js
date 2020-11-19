@@ -44,9 +44,18 @@ export class App extends Component {
     }
     counter++;
   }
+  test() {
+    console.log("comms");
+    try{
+      console.log(this.state.data.data.data[1])
+    } catch(err){
+      console.log("error");
+    }
+  }
 
   render() {
     { this.pullDataState() }
+    this.test();
     if (this.state.activePage == 0) {
       // this is temp lol
       return (
