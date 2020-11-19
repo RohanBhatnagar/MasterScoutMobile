@@ -31,9 +31,13 @@ export class App extends Component {
 
   getData = async () => {
     const response = await axios.get('https://jsonbox.io/box_5a9767899ab8ef9ab5d0/data/5fb0b24b9c0ec50017038679')
-    this.setState({
-      data: response
-    })
+    try {
+      this.setState({
+        data: response.data
+      });
+    } catch(err){
+      console.log('err')
+    } 
     console.log(this.state.data)
   }
 
@@ -44,18 +48,9 @@ export class App extends Component {
     }
     counter++;
   }
-  test() {
-    console.log("comms");
-    try{
-      console.log(this.state.data.data.data[1])
-    } catch(err){
-      console.log("error");
-    }
-  }
 
   render() {
     { this.pullDataState() }
-    this.test();
     if (this.state.activePage == 0) {
       // this is temp lol
       return (

@@ -77,6 +77,7 @@ export class TeamBreakdownRaw extends Component {
           teamNumber: this.getTeleopProp(relevantIndices[i]),
         });
       }
+      console.log(this.props);
       charts.push(
         <Container>
           <Col>
@@ -360,7 +361,7 @@ export class TeamBreakdownRaw extends Component {
       // finds the team if the teamnumber is equal to the searched teamnum
       (team) => team.teamNumber == searchedTeamNum
     );
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <Container style={containerWidth}>
         <Row>
