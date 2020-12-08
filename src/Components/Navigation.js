@@ -52,6 +52,11 @@ export class NavigationRaw extends Component {
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
+                  <Link to="/matchPlanning">
+                    Match Planning
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
                   <Link to="/rankings">
                     Rankings
                   </Link>

@@ -13,6 +13,7 @@ import { Rankings } from "./Components/Layout/Rankings";
 import { Settings } from "./Components/Layout/Settings";
 import Matches from "./Components/Matches";
 import { Compare } from "./Components/Layout/Compare";
+import MatchPlanning from "./Components/Layout/Canvas/MatchPlanning.jsx";
 
 
 let counter = 1;
@@ -95,6 +96,7 @@ export class App extends Component {
                 <Route path="/settings" component={Settings}></Route>
                 <Route path="/matches" component={Matches}></Route>
                 <Route path="/compare" component={Compare}></Route>
+                <Route path="/matchPlanning" component={MatchPlanning}></Route>
               </Switch>
             </Router>
           </div>
