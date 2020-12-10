@@ -15,10 +15,11 @@ import Button from "react-bootstrap/Button";
 let tba;
 let matches;
 let data;
+let counter = 0;
 
 export class Home extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   componentDidMount() {
@@ -54,7 +55,6 @@ export class Home extends Component {
     console.log(teams);
     return teams;
   };
-
 
   render() {
     tba = this.props.thebluealliance;

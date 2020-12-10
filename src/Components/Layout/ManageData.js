@@ -10,9 +10,6 @@ export class ManageData extends Component {
   render() {
     return (
       <Tabs defaultActiveKey="Team Breakdown" id="uncontrolled-tab-example">
-        <Tab eventKey="Import" title="Import">
-          <Import />
-        </Tab>
         <Tab eventKey="Raw" title="Raw">
           <Raw />
         </Tab>

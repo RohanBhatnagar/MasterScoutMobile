@@ -19,9 +19,9 @@ export class Matches extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.matches.map((match) => (
+            {/* {this.props.matches.map((match) => (
               <MatchRow match={match} currentMatch={this.props.currentMatch} />
-            ))}
+            ))} */}
           </tbody>
         </Table>
       </div>
