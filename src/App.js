@@ -13,7 +13,7 @@ import { Rankings } from "./Components/Layout/Rankings";
 import { Settings } from "./Components/Layout/Settings";
 import Matches from "./Components/Matches";
 import { Compare } from "./Components/Layout/Compare";
-import MatchPlanning from "./Components/Layout/Canvas/MatchPlanning.jsx";
+import MatchPlanning from "./Components/Layout/Canvas/MatchPlanning.js";
 
 
 let counter = 1;
